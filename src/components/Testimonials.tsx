@@ -81,7 +81,7 @@ const TestimonialsColumn = (props: {
         translateY: "-59%",
       }}
       transition={{
-        duration: props.duration || 10 ,
+        duration: props.duration || 10,
         repeat: Infinity,
         ease: "linear",
         repeatType: "loop",
@@ -90,8 +90,8 @@ const TestimonialsColumn = (props: {
     >
       {[...new Array(2)].fill(0).map((_, index) => (
         <React.Fragment key={index}>
-          {props.testimonials.map(({ text, imageSrc, name, username }) => (
-            <div className="card">
+          {props.testimonials.map(({ text, imageSrc, name, username }, idx) => (
+            <div key={idx} className="card">
               <div>{text}</div>
               <div className="flex items-center gap-2 mt-5">
                 <Image
